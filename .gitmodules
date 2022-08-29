@@ -1,3 +1,6 @@
 [submodule "dwm"]
 	path = dwm
 	url = git@github.com:Ronan-Kelley/dwm.git
+[submodule "rsblocks"]
+	path = rsblocks
+	url = https://github.com/mustafasalih1993/rsblocks
