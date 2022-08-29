@@ -4,3 +4,6 @@
 [submodule "rsblocks"]
 	path = rsblocks
 	url = https://github.com/mustafasalih1993/rsblocks
+[submodule "slock"]
+	path = slock
+	url = git@github.com:Ronan-Kelley/slock.git

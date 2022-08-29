@@ -23,9 +23,9 @@ compinit
 ###############
 # environment #
 ###############
-EDITOR='nvim'
-PAGER='less'
-BROWSER='firefox'
+export EDITOR='nvim'
+export PAGER='less'
+export BROWSER='firefox'
 
 ##########
 # prompt #
