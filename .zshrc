@@ -26,6 +26,8 @@ compinit
 export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='firefox'
+export VISUAL='nvim'
+export NVIMC="$HOME/.config/nvim"
 
 ##########
 # prompt #
