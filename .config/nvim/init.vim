@@ -1,3 +1,13 @@
+"""""""""""""""""""""""""
+"      vim plugged      "
+"""""""""""""""""""""""""
+" ensure it is downloaded!! (shell script)
+" [ ! -f "${XDG_DATA_HOME:-$HOME/.local/share/}"/nvim/site/autoload/plug.vim ] && curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" call vim plugged init
+call plug#begin()
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+call plug#end()
+
 """"""""""""""""""""""
 "      keybinds      "
 """"""""""""""""""""""
@@ -55,8 +65,12 @@ endfunction
 " enable truecolor
 set termguicolors
 
+" theme settings
+let g:tokyonight_style = "storm"
+let g:tokyonight_hide_inactive_statusline = 1
+
 " enable syntax highlighting
 syntax on
 
 " enable theme
-colorscheme industry
+colorscheme tokyonight
