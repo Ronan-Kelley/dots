@@ -7,3 +7,6 @@
 [submodule "slock"]
 	path = slock
 	url = git@github.com:Ronan-Kelley/slock.git
+[submodule "dwmstatus-rs"]
+	path = dwmstatus-rs
+	url = git@github.com:Ronan-Kelley/dwmstatus-rs.git
