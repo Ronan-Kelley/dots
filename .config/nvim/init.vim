@@ -1,3 +1,4 @@
+set nocompatible
 """""""""""""""""""""""""
 "      vim plugged      "
 """""""""""""""""""""""""
@@ -6,7 +7,19 @@
 " call vim plugged init
 call plug#begin()
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'lewis6991/impatient.nvim'
+    Plug 'antoinemadec/FixCursorHold.nvim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+""""""""""""""""""""""""""""""""""
+"      plugin configuration      "
+""""""""""""""""""""""""""""""""""
+" FixCursorHold.nvim
+let g:cursorhold_updatetime = 100 " in milliseconds
+" coc.nvim
+source ~/.config/nvim/init-coc.vim
 
 """"""""""""""""""""""
 "      keybinds      "
@@ -50,6 +63,7 @@ set smartcase
 "      aliases      "
 """""""""""""""""""""
 command! -nargs=0 Clean :call Clean()
+command! -nargs=0 Resource :source ~/.config/nvim/init.vim
 
 """""""""""""""""""""""
 "      functions      "
