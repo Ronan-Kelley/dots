@@ -29,6 +29,13 @@ export BROWSER='firefox'
 export VISUAL='nvim'
 export NVIMC="$HOME/.config/nvim"
 
+###########
+# aliases #
+###########
+# ls
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
+
 ##########
 # prompt #
 ##########
