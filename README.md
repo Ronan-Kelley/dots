@@ -27,6 +27,6 @@ but until it's in a decent state rsblocks will do.
 same deal as dwm; submodule, pulls custom build of slock. Details in slock's README.md file.
 
 ## st
-submodule linking to [Luke Smith](https://github.com/LukeSmithxyz/st)'s build of st, which I currently use.
+submodule linking to [Luke Smith](https://github.com/LukeSmithxyz)'s build of st, which I currently use.
 This one requires a special note: while I appreciate the projects Mr. Smith has chosen to share, I explicitly do
 *not* endorse his political beliefs that he so readily shares through his social media accounts.
