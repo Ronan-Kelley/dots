@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'antoinemadec/FixCursorHold.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'sheerun/vim-polyglot'
+    Plug 'lervag/vimtex'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""
@@ -20,6 +21,8 @@ call plug#end()
 let g:cursorhold_updatetime = 100 " in milliseconds
 " coc.nvim
 source ~/.config/nvim/init-coc.vim
+" vimtex
+source ~/.config/nvim/init-vimtex.vim
 
 """"""""""""""""""""""
 "      keybinds      "
