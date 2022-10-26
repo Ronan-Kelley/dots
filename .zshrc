@@ -16,7 +16,7 @@ unsetopt notify
 # enable vi bindings
 bindkey -v
 # enable autocomplete features
-zstyle :compinstall filename '/home/ronan/.zshrc'
+zstyle :compinstall filename "$HOME"'/.zshrc'
 autoload -Uz compinit
 compinit
 
