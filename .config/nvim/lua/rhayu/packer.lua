@@ -19,18 +19,27 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- file search plugins
     use {
 	    'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	    -- or                            , branch = '0.1.x',
 	    requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- theme
     use 'folke/tokyonight.nvim'
+    -- treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    -- quick file switcher
     use 'theprimeagen/harpoon'
+    -- undo tree with UI and git-like branches
     use 'mbbill/undotree'
+    -- first class git support
     use 'tpope/vim-fugitive'
+    -- LaTeX support
+    use 'lervag/vimtex'
 
+    -- main IDE features via lsp-zero
     use {
 	    'VonHeikemen/lsp-zero.nvim',
 	    requires = {
