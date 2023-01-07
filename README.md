@@ -7,9 +7,6 @@ backgrounds is my collection of background images, complete with a README.md con
 ## dwm
 dwm is a submodule. When initialized, it pulls in my custom dwm build. Details in dwm's README.md file.
 
-## dwmstatus-rs
-a custom statusbar generator intended to eventually replace rsblocks
-
 ## programs.sh
 programs.sh is a shell script that installs the following programs via pacman:
  - feh
@@ -20,8 +17,7 @@ programs.sh is a shell script that installs the following programs via pacman:
      - zathura-pdf-mupdf
 
 ## rsblocks
-rsblocks is the program used to set the statusbar for dwm; I'm working on writing a custom replacement for it,
-but until it's in a decent state rsblocks will do.
+rsblocks is the program I use to set the statusbar for dwm
 
 ## slock
 same deal as dwm; submodule, pulls custom build of slock. Details in slock's README.md file.
