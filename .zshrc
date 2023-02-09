@@ -56,7 +56,12 @@ n () {
     # stty lwrap undef
     # stty lnext undef
 
-    nnn -oeu "$@"
+    # nnn command
+    #   -o: open files only on enter key
+    #   -e: open text files in $VISUAL (fallback $EDITOR, fallback vi)
+    #   -u: use selection if available, don't prompt to choose between selection and hovered
+    #   -J: don't auto-advance on select
+    nnn -oeuJ "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
