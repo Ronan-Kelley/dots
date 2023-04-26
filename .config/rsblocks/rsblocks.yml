@@ -7,15 +7,15 @@ seperator: '┃'
 # Time always running, no enabled option for this  
 time:
   delay: 1.0
-  format: '%d %b, %I:%M:%S %p'
-  icon: ''
+  format: '%d %b, %H:%M'
+  icon: ''
 
 
 # Display brightness percentage  
 brightness:
-  icon: ''
-  delay: 60.0 
-  enabled: false
+  icon: ''
+  delay: 10.0 
+  enabled: true
   # read the output of the command "ls /sys/class/backlight" to match with the path below
   path: '/sys/class/backlight/intel_backlight'
 
@@ -63,7 +63,7 @@ disk:
 battery:
   delay: 30.0
   enabled: true
-  icon: ''
+  icon: ''
   
 
 cpu_temperature:
@@ -99,7 +99,7 @@ mpd:
 volume:
   card: 'PULSE'
   delay: 0.18
-  enabled: true
+  enabled: false
   icon: ''
 
 
