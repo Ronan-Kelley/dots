@@ -9,6 +9,7 @@ pipewire
 pipewire-pulse
 qt5-wayland
 qt6-wayland
+rofi-lbonn-wayland-only-git
 swaybg
 tmux
 wayland
