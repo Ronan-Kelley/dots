@@ -62,4 +62,7 @@ return require('packer').startup(function(use)
 	    }
     }
 
+    -- yuck file support
+    use 'elkowar/yuck.vim'
+
 end)
