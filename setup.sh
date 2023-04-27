@@ -27,8 +27,24 @@ install_programs() {
 }
 
 install_symlinks() {
-    # TODO
-    true
+    # define list of targets
+    targets=(
+        ".config/alacritty"
+        ".config/eww"
+        ".config/hypr"
+        ".config/nvim"
+        ".config/rofi"
+        ".zprofile"
+        ".zshrc"
+    )
+    for target in ${targets[*]}; do
+        if [ ! -f "$HOME/$target" ] && [ ! -d "$HOME/$target" ]; then
+            ln -s "$PWD/$target" "$HOME/$target"
+            echo "symlinked $target"
+        else
+            echo "could not symlink $target: already exists"
+        fi
+    done
 }
 
 print_help() {
