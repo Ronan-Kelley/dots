@@ -6,3 +6,7 @@
 ## Mountains At Dusk
 [file](mountains-at-dusk.jpg) | [source](https://wallhaven.cc/w/1k2p8v)
 ![mountains at dusk, with a warm forefront and cold, blue/black background](mountains-at-dusk.jpg)
+
+## Underwater Kitchen
+[file](underwater-kitchen.jpg) | [source](https://wallhaven.cc/w/5g57l1)
+![a drawing of a kitchen in an underwater dwelling, with brighter colors towards the center of the piece](underwater-kitchen.jpg)
