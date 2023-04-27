@@ -1,0 +1,6 @@
+# reduce background opacity
+window:
+  opacity: 0.8
+
+# allow terminal applications to change alacritty's window title
+dynamic_title: true
