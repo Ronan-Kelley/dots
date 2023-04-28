@@ -1,0 +1,79 @@
+/*
+ * ROFI color scheme
+ * written by Ronan Kelley
+ * https://github.com/Ronan-Kelley
+ */
+
+* {
+    windowbg: rgba(0, 0, 0, 0.1);
+
+    // background colors
+    bg1: rgba(45, 49, 71, 0.6);
+    // border colors
+    bd1: #1B6FDD;
+    // foreground colors
+    fg1: slategray;
+
+    background-color: @bg1;
+}
+
+window {
+    background-color: @bg1;
+
+    border-radius: 20px;
+    padding: 10px;
+
+    location: center;
+    width: 20em;
+    height: 15em;
+}
+
+inputbar {
+    border: 4px 4px 4px 4px;
+    border-radius: 10px;
+    border-color: @bd1;
+    padding: 5px;
+    background-color: @bg1;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: inherit;
+    // padding: 2px 4px 2px 2px;
+    text-color: white;
+    border-color: white;
+    border-width: 2px;
+}
+
+entry {
+    background-color: inherit;
+    padding: 0px 0px 0px 4px;
+    placeholder: "search";
+    placeholder-color: @fg1;
+    text-color: white;
+}
+
+listview {
+    background-color: rgba(0, 0, 0, 0);
+    fixed-height: true;
+    dynamic: false;
+}
+
+element {
+    background-color: transparent;
+}
+
+element normal active {
+    text-color: blue;
+    background-color: transparent;
+}
+
+element selected normal, element selected active {
+    background-color: blue;
+    text-decoration: none;
+    text-color: blue;
+}
+
+element-text {
+    text-color: white;
+}
