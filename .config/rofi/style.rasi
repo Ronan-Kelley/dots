@@ -14,7 +14,7 @@
     // foreground colors
     fg1: slategray;
 
-    background-color: @bg1;
+    background-color: transparent;
 }
 
 window {
