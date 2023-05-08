@@ -35,7 +35,6 @@ export NVIMC="$HOME/.config/nvim"
 # ls
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
-alias colorpicker='hyprpicker --format=rgb --no-fancy --autocopy'
 # nnn file manager
 n () {
     # Block nesting of nnn in subshells
