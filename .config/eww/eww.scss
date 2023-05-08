@@ -1,9 +1,22 @@
+$blue: #2931DD;
+$red: #ED333B;
+
 * {
     all: unset;
 }
 
-.rhayu-bar {
-    background-color: #2D3147;
-    padding: 5px;
-    border-radius: 10px;
+.workspace-entry {
+    background-color: transparent;
+}
+
+.workspace-entry.current {
+    background-color: $blue;
+}
+
+.battery-visual {
+    color: $blue;
+}
+
+.battery-visual.low {
+    color: $red;
 }
