@@ -62,6 +62,12 @@ return require('packer').startup(function(use)
 	    }
     }
 
+    -- tabline
+    use 'nanozuki/tabby.nvim'
+
+    -- ???
+    use 'seandewar/killersheep.nvim'
+
     -- yuck file support
     use 'elkowar/yuck.vim'
 
