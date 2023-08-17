@@ -19,6 +19,11 @@ bindkey -v
 zstyle :compinstall filename "$HOME"'/.zshrc'
 autoload -Uz compinit
 compinit
+# enable bash-style help builtin
+unalias run-help
+autoload run-help
+HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
+alias help=run-help
 
 ###############
 # environment #
