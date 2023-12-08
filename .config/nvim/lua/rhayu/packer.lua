@@ -21,8 +21,7 @@ return require('packer').startup(function(use)
 
     -- file search plugins
     use {
-	    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	    -- or                            , branch = '0.1.x',
+	    'nvim-telescope/telescope.nvim',
 	    requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -70,5 +69,8 @@ return require('packer').startup(function(use)
 
     -- yuck file support
     use 'elkowar/yuck.vim'
+
+    -- mips assembly syntax
+    use 'vim-scripts/mips.vim'
 
 end)
