@@ -13,12 +13,15 @@ unsetopt beep
 unsetopt nomatch
 # disable getting notifications from changes in background job status as they happened
 unsetopt notify
+# disable adding indicator to lines not terminated with a newline
+unsetopt PROMPT_CR
 # enable vi bindings
 bindkey -v
 # enable autocomplete features
 zstyle :compinstall filename "$HOME"'/.zshrc'
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
 # enable bash-style help builtin
 unalias run-help
 autoload run-help
