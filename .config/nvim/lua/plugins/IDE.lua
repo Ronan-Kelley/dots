@@ -25,7 +25,26 @@ return {
             local mason = require("mason")
             local mason_lspconfig = require("mason-lspconfig")
 
-            lsp.preset("recommended")
+            lsp_attach = function(client, bufnr)
+                local opts = {buffer = bufnr}
+
+                  vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+                  vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+                  vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+                  vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+                  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+                  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+                  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+                  vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+                  vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+                  vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+            end
+
+            lsp.extend_lspconfig({
+                sign_text = true,
+                lsp_attach = lsp_attach,
+                capabilities = require('cmp_nvim_lsp').default_capabilities()
+            })
 
             mason.setup({})
             mason_lspconfig.setup({
@@ -72,31 +91,6 @@ return {
                     {name = 'nvim_lsp'},
                 }
             })
-
-            lsp.set_preferences({
-                suggest_lsp_servers = false,
-                sign_icons = {
-                    error = 'E',
-                    warn = 'W',
-                    hint = 'H',
-                    info = 'I'
-                }
-            })
-
-            lsp.on_attach(function(client, bufnr)
-              local opts = {buffer = bufnr, remap = false}
-
-              vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-              vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-              vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-              vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-              vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-              vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-              vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-              vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-              vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-              vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-            end)
 
             lsp.setup()
 
