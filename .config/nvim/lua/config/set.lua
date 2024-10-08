@@ -29,3 +29,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+-- mouse --
+vim.opt.mouse = ""
+
+-- shell --
+vim.opt.shell = 'zsh'
