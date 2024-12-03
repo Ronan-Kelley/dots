@@ -14,6 +14,8 @@ return {
     },
 
     config = function()
+        vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
+
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
@@ -77,10 +79,10 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<CR>'] = cmp.mapping.confirm({ select = false }),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
