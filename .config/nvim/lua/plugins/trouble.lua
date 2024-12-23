@@ -1,16 +1,15 @@
 return {
     {
         "folke/trouble.nvim",
+        opts = {},
         cmd = "Trouble",
         keys = {
-            { "<leader>tt", function() require("trouble").toggle() end },
-            { "<leader>[t", function() require("trouble").next({skip_groups = true, jump = true}) end },
-            { "<leader>[t", function() require("trouble").previous({skip_groups = true, jump = true}) end },
+            { "<leader>cd", "<cmd>Trouble diagnostics toggle<cr>" },
+            { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>" },
         },
-        config = function()
-            require("trouble").setup({
-                icons = false,
-            })
-        end
     },
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = "false"
+    }
 }
