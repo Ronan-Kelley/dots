@@ -1,6 +1,6 @@
 return {
     {
-        "https://github.com/lewis6991/gitsigns.nvim",
+        "lewis6991/gitsigns.nvim",
         lazy = false,
         keys = {
             {"<leader>hn"},
@@ -19,4 +19,8 @@ return {
             vim.keymap.set("n", "<leader>hS", gsigns.undo_stage_hunk)
         end,
     },
+    {
+        "tpope/vim-fugitive",
+        lazy = false
+    }
 }
