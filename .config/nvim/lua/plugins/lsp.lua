@@ -77,12 +77,12 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<CR>'] = cmp.mapping.confirm({ select = false }),
+                ['<C-p>']     = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-n>']     = cmp.mapping.select_next_item(cmp_select),
+                ['<C-b>']     = cmp.mapping.scroll_docs(-4),
+                ['<C-f>']     = cmp.mapping.scroll_docs(4),
+                ['<CR>']      = cmp.mapping.confirm({ select = false }),
+                ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
@@ -103,5 +103,8 @@ return {
                 prefix = "",
             },
         })
+
+        -- luasnip
+        require('luasnip.loaders.from_lua').load({paths = "./lua/snippets"})
     end
 }
