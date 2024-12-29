@@ -1,6 +1,9 @@
 return {
     {
         "folke/trouble.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         opts = {},
         cmd = "Trouble",
         keys = {
@@ -8,8 +11,4 @@ return {
             { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>" },
         },
     },
-    {
-        "nvim-tree/nvim-web-devicons",
-        lazy = "false"
-    }
 }
