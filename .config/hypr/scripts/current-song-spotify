@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+
+import dbus
+
+class Spotify_Metadata():
+    def __init__(self):
+        self.bus: dbus.SessionBus = dbus.SessionBus()
+        self.spotify_bus: dbus.Bus = self.bus.get_object("org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2")
+        self.spotify_properties: dbus.Interface = dbus.Interface(self.spotify_bus, "org.freedesktop.DBus.Properties")
+        self.metadata = self.spotify_properties.Get("org.mpris.MediaPlayer2.Player", "Metadata")
+
+    def get_track_id(self):
+        return self.metadata['mpris:trackid']
+
+    def get_length(self):
+        return self.metadata['mpris:length']
+
+    def get_art_url(self):
+        return self.metadata['mpris:artUrl']
+
+    def get_album(self):
+        return self.metadata['xesam:album']
+
+    def get_album_artist(self):
+        return self.metadata['xesam:albumArtist']
+
+    def get_artist(self):
+        return self.metadata['xesam:artist'][0]
+
+    def get_auto_rating(self):
+        return self.metadata['xesam:autoRating']
+
+    def get_discNumber(self):
+        return self.metadata['xesam:discNumber']
+
+    def get_title(self):
+        return self.metadata['xesam:title']
+
+    def get_track_number(self):
+        return self.metadata['xesam:trackNumber']
+
+    def get_url(self):
+        return self.metadata['xesam:url']
+
+if __name__ == "__main__":
+    metadata = Spotify_Metadata()
+    print(f'{metadata.get_title()}  {"\udb81\udcc7".encode('utf-16', 'surrogatepass').decode('utf-16')}   {metadata.get_artist()}')
