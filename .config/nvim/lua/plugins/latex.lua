@@ -12,16 +12,5 @@ return {
             vim.opt.conceallevel = 1
             vim.g.tex_conceal = 'abdmg'
         end
-    },
-    {
-        "iurimateus/luasnip-latex-snippets.nvim",
-        dependencies = {
-            "lervag/vimtex",
-            "L3MON4D3/LuaSnip",
-        },
-        config = function()
-            require('luasnip-latex-snippets').setup( { use_treesitter =  true } )
-            require('luasnip').config.setup { enable_autosnippets = true }
-        end
     }
 }
