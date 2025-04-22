@@ -30,7 +30,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
--- mouse --
+-- disable mouse --
 vim.opt.mouse = ""
 
 -- shell --
