@@ -1,0 +1,11 @@
+# ignore everything related to git
+.git
+.gitignore
+LICENSE
+README.md
+
+# ignore the non-dotfile contents of the repo
+backgrounds
+post-programs.sh
+programs.list
+setup.sh
