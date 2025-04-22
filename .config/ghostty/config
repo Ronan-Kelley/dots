@@ -1,3 +1,5 @@
 background = #000000
 background-opacity = 0.7
 window-decoration = false
+font-feature = -calt -liga -dlig
+font-family = JetBrainsMonoNL Nerd Font
