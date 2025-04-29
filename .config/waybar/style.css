@@ -1,0 +1,51 @@
+/* set default font-family and -size */
+* {
+    font-family: JetBrainsMonoNLNerdFontPropo, JetBrainsMonoNLNerdFont;
+    font-size: 15px;
+}
+
+/* pad window and workspaces */
+#window,
+#workspaces {
+    margin: 5px 5px;
+}
+
+window#waybar {
+    color: #ffffff;
+    background-color: rgba(43, 48, 59, 0.5);
+    /* gradient border */
+    border: 2px solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #C878E9, #2931DD);
+}
+
+/* workspaces */
+#workspaces button {
+    box-shadow: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 2px 2px 2px 2px;
+    color: #ffffff;
+    border: none;
+}
+
+#workspaces button.visible {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 2px 2px 2px 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border: inherit;
+    background: gray;
+    transition-property: none;
+}

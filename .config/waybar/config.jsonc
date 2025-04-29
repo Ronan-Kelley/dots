@@ -1,0 +1,23 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["mpris"],
+    "modules-right": ["clock"],
+    "hyprland/window": {
+        "max-length": 50 /* limit the max length of the window title display */
+    },
+    "mpris": {
+        "format": "<span font='18'>{status_icon}</span> {dynamic}", /* the status icon never seems to actually appear? */
+        "interval": 1,
+        "dynamic-order": ["artist", "title"],
+        /* "ignored-players": ["firefox"], */
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "⏵",
+            "stopped": "⏹",
+        },
+    },
+    "clock": {
+        "format": "{:%H:%M %b %d, %G}"
+    }
+}
