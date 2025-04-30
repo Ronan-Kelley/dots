@@ -1,9 +1,10 @@
 ghostty
 base-devel
 dunst
-eww-wayland
 feh
 hyprland
+hypridle
+hyprlock
 neovim
 nnn
 pipewire
@@ -20,3 +21,4 @@ zathura
 zathura-pdf-mupdf
 zsh
 stow
+waybar
