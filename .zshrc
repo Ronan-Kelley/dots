@@ -43,6 +43,21 @@ export NVIMC="$HOME/.config/nvim"
 # ls
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
+# git
+alias gs='git status --short'
+alias gsw='git switch'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gu='git pull'
+alias gco='git checkout'
+alias gl='git log'
+alias glp="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
+alias gb='git branch'
+alias gi='git init'
+alias gcl='git clone'
 # nnn file manager
 n () {
     # Block nesting of nnn in subshells

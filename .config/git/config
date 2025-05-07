@@ -1,0 +1,44 @@
+[include]
+    # put your username and email into a file under home
+    path = ~/.gituserinfo
+
+[core]
+    # save on network and disk usage
+    compression = 9
+[pull]
+    # auto merge
+	rebase = false
+[init]
+    # default to using the main branch
+	defaultBranch = main
+
+[status]
+    # show branch
+    branch = true
+    # show stashes if they exist
+    showStash = true
+    # show untracked files
+    showUntrackedFiles = normal
+
+[diff]
+    renames = copies
+
+[push]
+    default = current
+
+[rebase]
+    missingCommitsCheck = warn
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = -taggerdate
+
+# alias "gh:" to github's ssh url
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+# alias my initials to my github namespace
+[url "git@github.com:Ronan-Kelley/"]
+    insteadOf = "rk:"
