@@ -43,6 +43,8 @@ export NVIMC="$HOME/.config/nvim"
 # ls
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
+# clear
+alias clear='clear -x'
 # git
 alias gs='git status --short'
 alias gsw='git switch'
