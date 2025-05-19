@@ -1,5 +1,6 @@
 -- make space the <leader> --
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- quick open netrw --
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)

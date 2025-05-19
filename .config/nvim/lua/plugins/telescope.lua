@@ -6,6 +6,7 @@ return {
         keys = {
             { "<leader>tb" },
             { "<leader>tf" },
+            { "<leader>tF" },
             { "<leader>ts" },
             { "<leader>th" },
             { "<leader>tgc" },
@@ -20,6 +21,7 @@ return {
 
             vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
             vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
+            vim.keymap.set('n', '<leader>tF', function() builtin.find_files{hidden = true} end, {})
             vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})
             vim.keymap.set('n', '<leader>tgc', builtin.git_commits, {})
             vim.keymap.set('n', '<leader>tgb', builtin.git_branches, {})

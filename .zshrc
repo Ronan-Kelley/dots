@@ -22,6 +22,13 @@ zstyle :compinstall filename "$HOME"'/.zshrc'
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
+# enable vcs integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+zstyle ':vcs_info:git:*' formats '%r %b'
 # enable bash-style help builtin
 unalias run-help
 autoload run-help

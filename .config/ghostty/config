@@ -3,3 +3,6 @@ background-opacity = 0.7
 window-decoration = false
 font-feature = -calt -liga -dlig
 font-family = JetBrainsMonoNL Nerd Font
+gtk-tabs-location = hidden
+
+keybind = ctrl+alt+l=toggle_tab_overview
