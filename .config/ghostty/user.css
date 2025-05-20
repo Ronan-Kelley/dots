@@ -1,0 +1,13 @@
+tabbox {
+	padding: 0px;
+	min-height: 10px;
+	font-size: 14px;
+	background-color: #b5bd68;
+	color: black;
+	filter: none;
+}
+
+tab {
+	min-height: 5px;
+	min-width: 0px;
+}
