@@ -3,8 +3,14 @@ background-opacity = 0.7
 window-decoration = false
 font-feature = -calt -liga -dlig
 font-family = JetBrainsMonoNL Nerd Font
+
+# tabs config
 gtk-tabs-location = bottom
 gtk-wide-tabs = false
 gtk-custom-css = user.css
+adw-toolbar-style = flat
+
+# disable single instance
+gkt-single-instance = false
 
 keybind = ctrl+alt+l=toggle_tab_overview
