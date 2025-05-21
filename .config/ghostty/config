@@ -11,6 +11,6 @@ gtk-custom-css = user.css
 adw-toolbar-style = flat
 
 # disable single instance
-gkt-single-instance = false
+gtk-single-instance = false
 
 keybind = ctrl+alt+l=toggle_tab_overview
