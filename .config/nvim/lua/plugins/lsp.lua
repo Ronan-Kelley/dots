@@ -54,20 +54,6 @@ return {
                             },
                         })
                     end,
-                    ["lua_ls"] = function()
-                        local lspconfig = require("lspconfig")
-                        lspconfig.lua_ls.setup {
-                            capabilities = capabilities,
-                            settings = {
-                                Lua = {
-                                    runtime = { version = "Lua 5.1" },
-                                    diagnostics = {
-                                        globals = { "vim" },
-                                    }
-                                }
-                            }
-                        }
-                    end,
                 }
             })
 
