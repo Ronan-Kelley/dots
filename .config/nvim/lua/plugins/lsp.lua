@@ -120,7 +120,7 @@ return {
         opts = {},
         cmd = "Trouble",
         keys = {
-            { "<leader>cd", "<cmd>Trouble diagnostics toggle<cr>" },
+            { "<leader>cd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>" },
             { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>" },
         },
     },
