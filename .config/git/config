@@ -35,6 +35,9 @@
 [tag]
     sort = -taggerdate
 
+[fetch]
+    prune = true
+
 # alias "gh:" to github's ssh url
 [url "git@github.com:"]
     insteadOf = "gh:"
