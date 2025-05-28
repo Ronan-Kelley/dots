@@ -2,31 +2,26 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim', 'crispgm/telescope-heading.nvim' },
+        dependencies = { 'nvim-lua/plenary.nvim' },
         keys = {
-            { "<leader>tb" },
-            { "<leader>tf" },
-            { "<leader>tF" },
-            { "<leader>ts" },
-            { "<leader>th" },
-            { "<leader>tgc" },
-            { "<leader>tgb" },
-            { "<leader>tgs" }
+            { "<leader>tb", "<cmd>lua require('telescope.builtin').buffers()<CR>", mode = { "n" } },
+            { "<leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", mode = { "n" } },
+            { "<leader>tF", "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", mode = { "n" } },
+            { "<leader>ts", "<cmd>lua require('telescope.builtin').live_grep()<CR>", mode = { "n" } },
+            { "<leader>tgc", "<cmd> lua require('telescope.builtin').git_commits()<CR>", mode = { "n" } },
+            { "<leader>tgb", "<cmd> lua require('telescope.builtin').git_branches()<CR>", mode = { "n" } },
+            { "<leader>tgs", "<cmd> lua require('telescope.builtin').git_status()<CR>", mode = { "n" } }
+        }
+    },
+    {
+        'crispgm/telescope-heading.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
+        keys = {
+            { "<leader>th", "<cmd>lua require('telescope').extensions.heading.heading()<CR>", mode = { "n" } },
         },
         config = function()
             local telescope = require('telescope')
-            local builtin = require('telescope.builtin')
-
             telescope.load_extension('heading')
-
-            vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
-            vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
-            vim.keymap.set('n', '<leader>tF', function() builtin.find_files{hidden = true} end, {})
-            vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})
-            vim.keymap.set('n', '<leader>tgc', builtin.git_commits, {})
-            vim.keymap.set('n', '<leader>tgb', builtin.git_branches, {})
-            vim.keymap.set('n', '<leader>tgs', builtin.git_status, {})
-            vim.keymap.set('n', '<leader>th', ':Telescope heading<CR>')
         end
     }
 }
