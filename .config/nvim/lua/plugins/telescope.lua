@@ -6,7 +6,7 @@ return {
         keys = {
             { "<leader>tb", "<cmd>lua require('telescope.builtin').buffers()<CR>", mode = { "n" } },
             { "<leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", mode = { "n" } },
-            { "<leader>tF", "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", mode = { "n" } },
+            { "<leader>tF", "<cmd>lua require('telescope.builtin').find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })<CR>", mode = { "n" } },
             { "<leader>ts", "<cmd>lua require('telescope.builtin').live_grep()<CR>", mode = { "n" } },
             { "<leader>tgc", "<cmd> lua require('telescope.builtin').git_commits()<CR>", mode = { "n" } },
             { "<leader>tgb", "<cmd> lua require('telescope.builtin').git_branches()<CR>", mode = { "n" } },
