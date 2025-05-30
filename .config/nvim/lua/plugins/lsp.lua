@@ -1,5 +1,16 @@
 return {
     {
+        "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+            opts.sources = opts.sources or {}
+            table.insert(opts.sources, {
+                name = "lazydev",
+                group_index = 0,
+            })
+        end
+    },
+    -- lsp
+    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason.nvim",
@@ -98,6 +109,21 @@ return {
             require('luasnip.loaders.from_lua').load({paths = "./lua/snippets"})
         end
     },
+    {
+        'folke/lazydev.nvim',
+        dependencies = {
+            "hrsh7th/nvim-cmp",
+        },
+        ft = 'lua',
+        opts = {
+            library = {
+                { path = "telescope", mods = { "telescope" } },
+                { path = "telescope.pickers", mods = { "telescope.pickers" } },
+                { path = "telescope.config", mods = { "telescope.config" } },
+            }
+        }
+    },
+    -- interact with the LSP via IDE-style windows
     {
         "folke/trouble.nvim",
         dependencies = {
