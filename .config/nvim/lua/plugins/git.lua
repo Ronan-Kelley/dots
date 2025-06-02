@@ -10,12 +10,12 @@ return {
                 }
             }
 
-            vim.keymap.set("n", "<leader>hn", function() gsigns.nav_hunk('next') end)
-            vim.keymap.set("n", "<leader>hN", function() gsigns.nav_hunk('prev') end)
-            vim.keymap.set("n", "<leader>hs", gsigns.stage_hunk)
-            vim.keymap.set("n", "<leader>hp", gsigns.preview_hunk_inline)
-            vim.keymap.set("n", "<leader>hP", gsigns.preview_hunk)
-            vim.keymap.set("n", "<leader>hr", gsigns.reset_hunk)
+            vim.keymap.set('n', "<leader>hn", function() gsigns.nav_hunk('next') end)
+            vim.keymap.set('n', "<leader>hN", function() gsigns.nav_hunk('prev') end)
+            vim.keymap.set('n', "<leader>hp", gsigns.preview_hunk_inline)
+            vim.keymap.set('n', "<leader>hP", gsigns.preview_hunk)
+            vim.keymap.set({'n', 'v'}, "<leader>hs", gsigns.stage_hunk)
+            vim.keymap.set({'n', 'v'}, "<leader>hr", gsigns.reset_hunk)
         end,
     },
     {
