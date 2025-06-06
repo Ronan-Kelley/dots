@@ -106,8 +106,13 @@ n () {
     nnn -oeuJA "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
+        # don't cd if we're already there to keep cd history clean for cd -
+        # the way that nnn stores its tmpfile is horrific it's true
+        if [ ! "$(pwd)" = "$(sed -E 's/[^'"'"']*'"'"'(.*)'"'"'/\1/;s:'"'\\\\''"':'"'"':g' "${NNN_TMPFILE}")" ];
+        then
             . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
+        fi
+        rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
 
