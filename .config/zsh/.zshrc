@@ -1,8 +1,6 @@
 ############
 # antidote #
 ############
-# set ZDOTDIR to not my home dir
-export ZDOTDIR="$HOME/.config/zsh"
 # bootstrap antidote
 if [ ! -d "${ZDOTDIR}/antidote" ]; then
     mkdir -p "${ZDOTDIR}"
@@ -12,11 +10,11 @@ fi
 zsh_plugins="${ZDOTDIR}/zsh_plugins"
 if [[ ! "${zsh_plugins}.zsh" -nt "${zsh_plugins}.txt" ]]; then
   (
-    source "${ZDOTDIR}/antidote/antidote.zsh"
-    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+    source "${ZDOTDIR}/antidote/antidote.zsh";
+    antidote bundle <"${zsh_plugins}.txt" >"${zsh_plugins}.zsh";
   )
 fi
-source ${zsh_plugins}.zsh
+source "${zsh_plugins}.zsh";
 
 #########
 # shell #
@@ -54,15 +52,6 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
-
-###############
-# environment #
-###############
-export EDITOR='nvim'
-export PAGER='less'
-export BROWSER='firefox'
-export VISUAL='nvim'
-export NVIMC="$HOME/.config/nvim"
 
 ###########
 # aliases #
