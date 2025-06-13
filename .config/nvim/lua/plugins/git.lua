@@ -6,7 +6,7 @@ return {
             local gsigns = require('gitsigns')
             gsigns.setup{
                 diff_opts = {
-                    vertical = true -- doesn't seem to work
+                    vertical = true
                 }
             }
 
@@ -16,6 +16,14 @@ return {
             vim.keymap.set('n', "<leader>hP", gsigns.preview_hunk)
             vim.keymap.set({'n', 'v'}, "<leader>hs", gsigns.stage_hunk)
             vim.keymap.set({'n', 'v'}, "<leader>hr", gsigns.reset_hunk)
+            -- use a count to change between comparison bases for git gutters
+            vim.keymap.set('n', "<leader>cb", function ()
+                if vim.v.count ~= 0 then
+                    gsigns.change_base('~' .. vim.v.count)
+                else
+                    gsigns.change_base('HEAD')
+                end
+            end)
         end,
     },
     {
