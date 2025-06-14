@@ -55,6 +55,15 @@ return {
                             prompt_position = "top",
                             width = 0.8
                         },
+                    },
+                },
+                pickers = {
+                    buffers = {
+                        mappings = {
+                            n = {
+                                ["<C-d>"] = "delete_buffer"
+                            }
+                        }
                     }
                 }
             }
