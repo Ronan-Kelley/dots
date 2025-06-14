@@ -12,7 +12,53 @@ return {
             { "<leader>tgc", "<cmd> lua require('telescope.builtin').git_commits()<CR>", mode = { "n" } },
             { "<leader>tgb", "<cmd> lua require('telescope.builtin').git_branches()<CR>", mode = { "n" } },
             { "<leader>tgs", "<cmd> lua require('telescope.builtin').git_status()<CR>", mode = { "n" } }
-        }
+        },
+        config = function ()
+            local telescope_prompt = {
+                TelescopePromptNormal = {
+                    bg = '#2d3149'
+                },
+                TelescopePromptBorder = {
+                    bg = '#2d3149'
+                },
+                -- same color title and background makes it easier to hide
+                -- titles for builtins that override the default
+                -- prompt/preview/results title fields
+                TelescopePromptTitle = {
+                    fg = '#2d3149',
+                    bg = '#2d3149'
+                },
+                TelescopePreviewTitle = {
+                    fg = '#171720',
+                    bg = '#171720'
+                },
+                TelescopeResultsTitle = {
+                    fg = '#171720',
+                    bg = '#171720'
+                }
+            }
+            for hl, col in pairs(telescope_prompt) do
+                vim.api.nvim_set_hl(0, hl, col)
+            end
+
+            require('telescope').setup{
+                defaults = {
+                    winblend = 30,
+                    -- empty border chars with borders enabled will keep the
+                    -- natural looking padding; no borders leaves weird gaps
+                    border = true,
+                    borderchars = {" ", " ", " ", " ", " ", " ", " ", " "},
+                    layout_config = {
+                        horizontal = {
+                            height = 0.9,
+                            preview_cutoff = 120,
+                            prompt_position = "top",
+                            width = 0.8
+                        },
+                    }
+                }
+            }
+        end
     },
     {
         'crispgm/telescope-heading.nvim',
