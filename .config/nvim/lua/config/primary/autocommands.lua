@@ -1,4 +1,4 @@
--- [nfnl] fnl/config/autocommands.fnl
+-- [nfnl] fnl/config/primary/autocommands.fnl
 local function _1_()
   vim.system({"killall", "-SIGUSR2", "waybar"}, {text = true})
   return false

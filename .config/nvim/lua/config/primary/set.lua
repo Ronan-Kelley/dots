@@ -1,4 +1,4 @@
--- [nfnl] fnl/config/set.fnl
+-- [nfnl] fnl/config/primary/set.fnl
 local util = require("util")
 do
   local options = {nu = true, relativenumber = true, tabstop = 4, softtabstop = 4, shiftwidth = 4, expandtab = true, smartindent = true, undodir = (os.getenv("HOME") .. "/.vim/undodir"), undofile = true, incsearch = true, termguicolors = true, scrolloff = 8, signcolumn = "yes", mouse = "", shell = "zsh", backup = false, hlsearch = false, swapfile = false, wrap = false}

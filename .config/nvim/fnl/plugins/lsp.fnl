@@ -14,25 +14,10 @@
                  :saadparwaiz1/cmp_luasnip
                  :j-hui/fidget.nvim]
   :config (fn []
-            (vim.keymap.set :n :<leader>vd vim.diagnostic.open_float)
             (local cmp (require :cmp))
-            (local cmp-lsp (require :cmp_nvim_lsp))
-            (local capabilities
-                   (vim.tbl_deep_extend :force {}
-                                        (vim.lsp.protocol.make_client_capabilities)
-                                        (cmp-lsp.default_capabilities)))
             ((. (require :fidget) :setup) {})
             ((. (require :mason) :setup))
-            ((. (require :mason-lspconfig) :setup) {:ensure_installed [:lua_ls]
-                                                    :handlers {1 (fn [server-name]
-                                                                   ((. (require :lspconfig)
-                                                                       server-name
-                                                                       :setup) {: capabilities}))
-                                                               :fennel_language_server (fn []
-                                                                                         (local lspconfig
-                                                                                                (require :lspconfig))
-                                                                                         (lspconfig.fennel_language_server.setup {:settings {:fennel {:diagnostics {:globals [:vim]}
-                                                                                                                                                      :workspace {:library (vim.api.nvim_list_runtime_paths)}}}}))}})
+
             (local cmp-select {:behavior cmp.SelectBehavior.Select})
             (cmp.setup {:mapping (cmp.mapping.preset.insert {:<C-Space> (cmp.mapping.confirm {:select true})
                                                              :<C-b> (cmp.mapping.scroll_docs (- 4))
@@ -47,13 +32,9 @@
                         :sources (cmp.config.sources [{:name :nvim_lsp}
                                                       {:name :luasnip}]
                                                      [{:name :buffer}])})
-            (vim.diagnostic.config {:float {:border :rounded
-                                            :focusable false
-                                            :header ""
-                                            :prefix ""
-                                            :source :always
-                                            :style :minimal}})
-            ((. (require :luasnip.loaders.from_lua) :load) {:paths :./lua/snippets}))
+            ((. (require :luasnip.loaders.from_lua) :load) {:paths :./lua/snippets})
+            ; run this last
+            ((. (require :config.lsp) :setup)))
  }
  {1 :folke/trouble.nvim
   :dependencies [:nvim-tree/nvim-web-devicons]
