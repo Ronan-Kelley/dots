@@ -1,25 +1,7 @@
-return
-{
-    "nvim-neorg/neorg",
-    lazy = false,
-    config = function()
-        require("neorg").setup {
-            load = {
-                ["core.defaults"] = {},
-                ["core.concealer"] = {},
-                ["core.dirman"] = {
-                    config = {
-                        workspaces = {
-                            notes = "~/notes",
-                        },
-                        default_workspace = "notes",
-                        index = "index.norg",
-                    },
-                },
-            },
-        }
-
-        vim.wo.foldlevel = 99
-        vim.wo.conceallevel = 2
-    end,
-}
+-- [nfnl] fnl/plugins/neorg.fnl
+local util = require("util")
+local function _1_()
+  require("neorg").setup({load = {["core.concealer"] = {}, ["core.defaults"] = {}, ["core.dirman"] = {config = {workspaces = {notes = "~/notes"}, default_workspace = "notes", index = "index.norg"}}}})
+  return util["mapped-set"](vim.wo, {foldlevel = 99, conceallevel = 2})
+end
+return {"nvim-neorg/neorg", config = _1_, lazy = false}

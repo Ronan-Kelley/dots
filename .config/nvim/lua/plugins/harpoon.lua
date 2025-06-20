@@ -1,27 +1,11 @@
-return {
-    {
-        "theprimeagen/harpoon",
-        lazy = true,
-        keys = {
-            {"<leader>ha"},
-            {"<leader>hm"},
-            {"<leader>h1"},
-            {"<leader>h2"},
-            {"<leader>h3"},
-            {"<leader>h4"},
-        },
-        config = function()
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
-
-            vim.keymap.set("n", "<leader>ha", mark.add_file)
-
-            vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu)
-
-            vim.keymap.set("n", "<leader>h1", function() ui.nav_file(1) end)
-            vim.keymap.set("n", "<leader>h2", function() ui.nav_file(2) end)
-            vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
-            vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end)
-        end,
-    }
-}
+-- [nfnl] fnl/plugins/harpoon.fnl
+local function _1_()
+  return require("harpoon.mark").add_file()
+end
+local function _2_()
+  return require("harpoon.ui").toggle_quick_menu()
+end
+local function _3_()
+  return require("harpoon.ui").nav_file(vim.v.count)
+end
+return {{"theprimeagen/harpoon", lazy = true, keys = {{"<leader>ha", _1_, mode = {"n"}}, {"<leader>hm", _2_, mode = {"n"}}, {"<leader>hj", _3_, mode = {"n"}}}}}

@@ -1,5 +1,5 @@
-require ("config.lazy")
-require ("config.set")
-require ("config.remap")
-require ("config.netrw")
-require ("config.autocommands")
+-- [nfnl] fnl/config/init.fnl
+require("config.lazy")
+require("config.set")
+require("config.map")
+return require("config.autocommands")

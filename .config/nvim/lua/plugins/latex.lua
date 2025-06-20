@@ -1,16 +1,8 @@
-return {
-    {
-        "lervag/vimtex",
-        lazy = true,
-        ft = "tex",
-        config = function()
-            vim.g.vimtex_view_use_tmp_files = 0
-            vim.g.vimtex_viewer_general = 'zathura'
-            vim.g.vimtex_context_pdf_viewer = 'zathura'
-            vim.g.vimtex_view_method = 'zathura'
-            vim.g.vimtex_view_general_viewer = 'zathura'
-            vim.opt.conceallevel = 1
-            vim.g.tex_conceal = 'abdmg'
-        end
-    }
-}
+-- [nfnl] fnl/plugins/latex.fnl
+local util = require("util")
+local function _1_()
+  local viewer = "zathura"
+  local opts = {vimtex_view_use_tmp_files = 0, vimtex_viewer_general = viewer, vimtex_context_pdf_viewer = viewer, vimtex_view_method = viewer, vimtex_view_general_viewer = viewer}
+  return util["mapped-set"](vim.g, opts)
+end
+return {{"lervag/vimtex", lazy = true, ft = "tex", config = _1_}}
