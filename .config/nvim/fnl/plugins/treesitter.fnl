@@ -8,6 +8,6 @@
                                    :rust]
                 :highlight {:additional_vim_regex_highlighting false
                             :enable true}
-                :indent {:enable true}
+                :indent {:enable false}
                 :sync_install false}))
   :lazy false}]
