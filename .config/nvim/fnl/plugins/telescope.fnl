@@ -15,6 +15,8 @@
           :mode [:n]}
          {1 :<leader>tS
           2 "<cmd>lua require('telescope.builtin').live_grep({ additional_args = { '--no-ignore', '--hidden' }})<CR>"
+         {1 :<leader>tt
+          2 "<cmd>lua require('telescope.builtin').treesitter()<CR>"
           :mode [:n]}
          {1 :<leader>tgc
           2 "<cmd> lua require('telescope.builtin').git_commits()<CR>"

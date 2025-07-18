@@ -28,8 +28,18 @@ source "${zsh_plugins}.zsh";
 #########
 # history settings
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY         # append to history file
+setopt HIST_NO_STORE          # Don't store history commands
+
 # enable autocd
 setopt autocd
 # disable beeping
@@ -64,9 +74,10 @@ alias help=run-help
 # aliases #
 ###########
 # ls
+alias l='ls --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
-# clear
+# don't clear scrollback on clear
 alias clear='clear -x'
 # git
 alias gs='git status --short'
@@ -79,10 +90,13 @@ alias gpf='git push --force-with-lease'
 alias gu='git pull'
 alias gco='git checkout'
 alias gl='git log'
+alias glg='git log --graph --oneline'
 alias glp="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
 alias gb='git branch'
 alias gi='git init'
 alias gcl='git clone'
+# rg
+alias rg='rg --color=always --heading'
 # nnn file manager
 n () {
     # Block nesting of nnn in subshells
