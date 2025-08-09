@@ -1,10 +1,3 @@
-# I normally start my DE from a tty; in environments
-# with a display manager, this ensures the behavior
-# of zsh is what I expect it to be.
-if [ -z ${ZDOTDIR} ]; then
-    source ~/.zprofile;
-fi
-
 ############
 # antidote #
 ############
