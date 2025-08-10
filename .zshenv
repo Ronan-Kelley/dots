@@ -9,13 +9,11 @@ pathfront=( "${HOME}/Scripts" "${HOME}/bin" )
 for curpath in ${pathback[@]}; do
     if [ -d "${curpath}" ]; then
         PATH="${PATH}:${curback}"
-        echo "$curpath"
     fi
 done
 for curpath in ${pathfront[@]}; do
     if [ -d "${curpath}" ]; then
         PATH="${curfront}:${PATH}"
-        echo "$curpath"
     fi
 done
 export PATH
