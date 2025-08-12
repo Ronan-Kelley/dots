@@ -14,6 +14,7 @@ local function _1_()
   vim.keymap.set("n", "<leader>hP", gsigns.preview_hunk)
   vim.keymap.set({"n", "v"}, "<leader>hs", gsigns.stage_hunk)
   vim.keymap.set({"n", "v"}, "<leader>hr", gsigns.reset_hunk)
+  vim.keymap.set({"n", "v"}, "<leader>hb", gsigns.blame)
   local function _4_()
     if (vim.v.count ~= 0) then
       return gsigns.change_base(("~" .. vim.v.count))

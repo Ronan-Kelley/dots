@@ -9,6 +9,7 @@
             (vim.keymap.set :n :<leader>hP gsigns.preview_hunk)
             (vim.keymap.set [:n :v] :<leader>hs gsigns.stage_hunk)
             (vim.keymap.set [:n :v] :<leader>hr gsigns.reset_hunk)
+            (vim.keymap.set [:n :v] :<leader>hb gsigns.blame)
             ; use a count to change between comparison bases for git gutters
             (vim.keymap.set :n :<leader>cb
                             (fn []
