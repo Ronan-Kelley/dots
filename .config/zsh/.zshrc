@@ -88,8 +88,6 @@ alias glp="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %a
 alias gb='git branch'
 alias gi='git init'
 alias gcl='git clone'
-# rg
-alias rg='rg --color=always --heading'
 # nnn file manager
 n () {
     # Block nesting of nnn in subshells
