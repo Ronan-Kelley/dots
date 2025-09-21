@@ -1,27 +1,48 @@
-[{1 :hrsh7th/nvim-cmp
-  :opts (fn [_ opts]
-          (set opts.sources (or opts.sources {}))
-          (table.insert opts.sources {:group_index 0 :name :lazydev}))}
+[{1 :saghen/blink.cmp
+  :dependencies [
+    {1 :L3MON4D3/LuaSnip
+      :version :v2.*
+      :build "make install_jsregexp"}]
+  :opts {
+    :keymap {
+        :preset :none
+        ; similar to the default keymaps but <C-space> and <C-y> are switched
+        :<C-space> [ :select_and_accept :fallback ]
+        :<C-y>     [ :show :show_documentation :hide_documentation]
+        :<Up>      [ :select_prev :fallback ]
+        :<Down>    [ :select_next :fallback ]
+        :<C-p>     [ :select_prev :fallback ]
+        :<C-n>     [ :select_next :fallback ]
+        :<C-b>     [ :scroll_documentation_up ]
+        :<C-f>     [ :scroll_documentation_down ]
+        :<Tab>     [ :snippet_forward :fallback ]
+        :<S-Tab>   [ :snippet_backward :fallback ]
+        :<C-k>     [ :show_signature :hide_signature :fallback ]
+    }
+    :appearance { :nerd_font_variant :mono }
+    :completion { :documentation { :auto_show false } }
+    :sources { :default [ :lsp :path :snippets :buffer ] }
+    :snippets { :preset :luasnip }
+    :fuzzy { :implementation :prefer_rust_with_warning }
+  }
+  :version :1.* }
  {1 :neovim/nvim-lspconfig
   :dependencies [:williamboman/mason.nvim
                  :williamboman/mason-lspconfig.nvim
-                 :hrsh7th/cmp-nvim-lsp
-                 :hrsh7th/cmp-buffer
-                 :hrsh7th/cmp-path
-                 :hrsh7th/cmp-cmdline
-                 :hrsh7th/nvim-cmp
-                 {1 :L3MON4D3/LuaSnip :build "make install_jsregexp"}
-                 :saadparwaiz1/cmp_luasnip
+                 {1 :L3MON4D3/LuaSnip
+                    :version :v2.*
+                    :build "make install_jsregexp"}
                  :j-hui/fidget.nvim]
-  :config (fn []
+  :opts {
+    :servers {
+        :lua_ls {}
+    }
+  }
+  :config (fn [_ opts]
             (vim.keymap.set :n :<leader>vd vim.diagnostic.open_float)
-            (local cmp (require :cmp))
-            (local cmp-lsp (require :cmp_nvim_lsp))
-            (local capabilities
-                   (vim.tbl_deep_extend :force {}
-                                        (vim.lsp.protocol.make_client_capabilities)
-                                        (cmp-lsp.default_capabilities)))
+            ; enable fidget
             ((. (require :fidget) :setup) {})
+            ; setup mason
             ((. (require :mason) :setup))
             ((. (require :mason-lspconfig) :setup) {:ensure_installed [:lua_ls]
                                                     :handlers {1 (fn [server-name]
@@ -33,26 +54,14 @@
                                                                                                 (require :lspconfig))
                                                                                          (lspconfig.fennel_language_server.setup {:settings {:fennel {:diagnostics {:globals [:vim]}
                                                                                                                                                       :workspace {:library (vim.api.nvim_list_runtime_paths)}}}}))}})
-            (local cmp-select {:behavior cmp.SelectBehavior.Select})
-            (cmp.setup {:mapping (cmp.mapping.preset.insert {:<C-Space> (cmp.mapping.confirm {:select true})
-                                                             :<C-b> (cmp.mapping.scroll_docs (- 4))
-                                                             :<C-f> (cmp.mapping.scroll_docs 4)
-                                                             :<C-n> (cmp.mapping.select_next_item cmp-select)
-                                                             :<C-p> (cmp.mapping.select_prev_item cmp-select)
-                                                             :<CR> (cmp.mapping.confirm {:select false})})
-                        :snippet {:expand (fn [args]
-                                            ((. (require :luasnip) :lsp_expand) args.body)
-                                            ((. (require :luasnip) :config
-                                                :setup) {:enable_autosnippets true}))}
-                        :sources (cmp.config.sources [{:name :nvim_lsp}
-                                                      {:name :luasnip}]
-                                                     [{:name :buffer}])})
+            ; configure the diagnostic window
             (vim.diagnostic.config {:float {:border :rounded
                                             :focusable false
                                             :header ""
                                             :prefix ""
                                             :source :always
                                             :style :minimal}})
+            ; load snippets
             ((. (require :luasnip.loaders.from_lua) :load) {:paths :./lua/snippets}))
  }
  {1 :folke/trouble.nvim
