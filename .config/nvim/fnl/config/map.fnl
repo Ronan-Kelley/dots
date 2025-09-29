@@ -19,5 +19,8 @@
 ; make currently loaded file executable
 (vim.keymap.set :n "<leader>x" "<cmd>!chmod +x %<CR>" { :silent true })
 
+; open diagnostic float
+(vim.keymap.set :n :<leader>vd vim.diagnostic.open_float)
+
 ; return nothing
 {}

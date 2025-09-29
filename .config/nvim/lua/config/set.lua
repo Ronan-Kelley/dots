@@ -8,4 +8,5 @@ do
   local options_global = {netrw_browse_split = 0, netrw_banner = 0, netrw_winsize = 25}
   util["mapped-set"](vim.g, options_global)
 end
+vim.diagnostic.config({float = {border = "rounded", header = "", prefix = "", source = "always", style = "minimal", focusable = false}})
 return {}

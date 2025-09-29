@@ -12,4 +12,5 @@ vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-j>")
 vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-k>")
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
 return {}

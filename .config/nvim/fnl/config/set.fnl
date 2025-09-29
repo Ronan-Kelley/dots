@@ -30,9 +30,9 @@
         ; scroll offset; always leave n lines visible above/below cursor
         :scrolloff 8
 
-        :signcolumn "yes"
+        :signcolumn :yes
         :mouse ""
-        :shell "zsh"
+        :shell :zsh
        }]
   (util.mapped-set vim.o options))
 
@@ -44,6 +44,14 @@
         :netrw_winsize 25
        }]
   (util.mapped-set vim.g options-global))
+
+; configure the diagnostic window
+(vim.diagnostic.config {:float {:border :rounded
+                                :focusable false
+                                :header ""
+                                :prefix ""
+                                :source :always
+                                :style :minimal}})
 
 ; return nothing
 {}
