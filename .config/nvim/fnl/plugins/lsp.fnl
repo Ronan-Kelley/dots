@@ -64,10 +64,13 @@
             ((. (require :luasnip.loaders.from_lua) :load) {:paths :./lua/snippets}))
 
  }
+ ; IDE-like view of all code symbols/diagnostics/etc
  {1 :folke/trouble.nvim
   :dependencies [:nvim-tree/nvim-web-devicons]
   :opts {}
   :cmd :Trouble
   :keys [[:<leader>cd "<cmd>Trouble diagnostics toggle filter.buf=0<cr>"]
          [:<leader>cs "<cmd>Trouble symbols toggle focus=false<cr>"]]
-  }]	
+  }
+ ; rainbow parenthesis/brackets/braces
+ {1 :HiPhish/rainbow-delimiters.nvim}]
