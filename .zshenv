@@ -24,3 +24,5 @@ export BROWSER='firefox'
 export VISUAL='nvim'
 export NVIMC="$HOME/.config/nvim"
 export GUILE_AUTO_COMPILE=0
+
+[ -f "${ZDOTDIR}/local_only/zshenv" ] && source "${ZDOTDIR}/local_only/zshenv"
