@@ -1,0 +1,59 @@
+{
+  "plugins": {
+    "LuaSnip": {
+      "rev": "642b0c595e11608b4c18219e93b88d7637af27bc",
+      "src": "https://github.com/L3MON4D3/LuaSnip",
+      "version": "'v2.5.0'"
+    },
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "fidget.nvim": {
+      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "f5d2a8570f8b736ddb9bb4be504355bcd6e15ec8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "tabby.nvim": {
+      "rev": "3c130e1fcb598ce39a9c292847e32d7c3987cf11",
+      "src": "https://github.com/nanozuki/tabby.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "5255aa27c422de944791318024167ad5d40aad20",
+      "src": "https://github.com/nvim-telescope/telescope.nvim",
+      "version": "'v0.2.2'"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    }
+  }
+}
