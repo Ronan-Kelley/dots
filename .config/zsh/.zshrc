@@ -64,6 +64,9 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
+# ZSH likes to highlight pasted text, which makes it impossible to tell where my cursor is in it.
+# this disables that.
+zle_highlight=('paste:none')
 
 ##########
 # prompt #
