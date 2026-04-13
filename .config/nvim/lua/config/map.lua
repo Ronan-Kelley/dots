@@ -1,3 +1,7 @@
+-- leaders
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
+
 -- visual block shifting
 vim.keymap.set('v', "H", '<gv')
 vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv")
