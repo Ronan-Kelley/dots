@@ -24,7 +24,9 @@ vim.pack.add({
     { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.x') }, -- pinned to 1.x so I don't have to
                                                                                          -- worry about blink.lib right now.
     -- LSP notifications
-    'https://github.com/j-hui/fidget.nvim'
+    'https://github.com/j-hui/fidget.nvim',
+    -- a bunch of lsp definitions
+    { src = 'https://github.com/neovim/nvim-lspconfig', version = vim.version.range('2.x') }
 })
 
 -- either a table of plugin name and plugin config,
@@ -66,11 +68,11 @@ local plugins = {
 }
 
 -- setup all the plugins
-for _, v in ipairs(plugins) do
-    if type(v) == "table" then
-        require(v[1]).setup(v[2])
+for _, plugin in ipairs(plugins) do
+    if type(plugin) == "table" then
+        require(plugin[1]).setup(plugin[2])
     else
-        require(v).setup()
+        require(plugin).setup()
     end
 end
 
