@@ -26,7 +26,9 @@ vim.pack.add({
     -- LSP notifications
     'https://github.com/j-hui/fidget.nvim',
     -- a bunch of lsp definitions
-    { src = 'https://github.com/neovim/nvim-lspconfig', version = vim.version.range('2.x') }
+    { src = 'https://github.com/neovim/nvim-lspconfig', version = vim.version.range('2.x') },
+    -- confirmation before doing quitall
+    { src = 'https://github.com/yutkat/confirm-quit.nvim', version = 'a1dbd9b553e8d6770cd6a879a3ee8ffad292c70c' }
 })
 
 -- either a table of plugin name and plugin config,
@@ -65,6 +67,10 @@ local plugins = {
         fuzzy = {implementation = "prefer_rust_with_warning"}
     }},
     'fidget',
+    { 'confirm-quit', {
+        overwrite_q_command = false,
+        quit_message = 'quit all?'
+    }},
 }
 
 -- setup all the plugins
