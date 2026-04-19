@@ -7,4 +7,5 @@ vim.cmd [[
         return (getcmdtype() == ':' && getcmdline() ==# a:command)
     endfunction
     cnoreabbrev <expr> qa <SID>solely_in_cmd('qa') ? 'ConfirmQuitAll' : 'qa'
+    cnoreabbrev <expr> qall <SID>solely_in_cmd('qall') ? 'ConfirmQuitAll' : 'qall'
 ]]
