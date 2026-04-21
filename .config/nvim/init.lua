@@ -1,5 +1,7 @@
 require('config')
 require('plugins')
+-- temporary workaround for https://github.com/neovim/neovim/issues/38302
+require('config.lsp')
 
 vim.cmd.colorscheme('tokyonight')
 
