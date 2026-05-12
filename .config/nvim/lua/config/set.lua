@@ -45,3 +45,6 @@ vim.diagnostic.config = {
         style = 'minimal'
     }
 }
+
+-- treat header files as C files
+vim.g.c_syntax_for_h = true

@@ -5,12 +5,14 @@
 [core]
     # save on network and disk usage
     compression = 9
+    # DOS newline is not an error
+    whitespace = cr-at-eol
 [pull]
     # auto merge
-	rebase = false
+    rebase = false
 [init]
     # default to using the main branch
-	defaultBranch = main
+    defaultBranch = main
 
 [status]
     # show branch
